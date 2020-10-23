@@ -1,0 +1,9 @@
+.user-list {
+  height: 92vh;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 100%;
+}

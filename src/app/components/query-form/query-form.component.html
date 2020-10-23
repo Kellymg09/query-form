@@ -1,0 +1,53 @@
+<div class="container pending-queries">
+    <div class="col-lg-10 col-md-10 col-sm-10 my-4">
+        <h1 class="mat-title">Query Form</h1>
+        <form [formGroup]="form">
+            <div class="input-group">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Query</mat-label>
+                    <textarea matInput placeholder="Query" type="text" formControlName="query"
+                        style="resize: none;"></textarea>
+                    <mat-error *ngIf="form.controls.query.errors">
+                        <p *ngIf="form.controls.query.errors.required">
+                            Required field
+                        </p>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Database</mat-label>
+                    <mat-select formControlName="dbId">
+                        <!-- <mat-option *ngFor="let f of listaFranjas" [value]="f">{{ f }}
+                        </mat-option> -->
+                        <mat-option *ngFor="let db of dbs" [value]="db.id">{{ db.base }}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="form.controls.dbId.errors">
+                        <p *ngIf="form.controls.dbId.errors.required">
+                            Required field
+                        </p>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Write a message</mat-label>
+                    <textarea matInput placeholder="Write a message" type="text" formControlName="comments"
+                        style="resize: none;"></textarea>
+                    <mat-error *ngIf="form.controls.comments.errors">
+                        <p *ngIf="form.controls.comments.errors.required">
+                            Required field
+                        </p>
+                    </mat-error>
+                </mat-form-field>
+                <div class="w-100 justify-end">
+                    <button mat-raised-button [disabled]="!form.valid" (click)="sendQuery()">Send query</button>
+                </div>
+                <div class="alert alert-success my-4 w-100" role="alert" *ngIf="queryError === false">
+                    Query successfully sent
+                </div>
+                <div class="alert alert-danger my-4 w-100" role="alert" *ngIf="queryError">
+                    There was an error in the query
+                </div>
+            </div>
+        </form>
+    </div>
+</div>`

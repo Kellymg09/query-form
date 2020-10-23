@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Reject Query</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="form">
+        <div class="input-group">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Reason</mat-label>
+                <textarea matInput placeholder="Reason" type="text" formControlName="reason"></textarea>
+                <mat-error *ngIf="form.controls.reason.errors">
+                    <p *ngIf="form.controls.reason.errors.required">
+                        Required field
+                    </p>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions class="justify-end">
+    <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+    <button mat-raised-button [mat-dialog-close]="true" [disabled]="!form.valid" (click)="rejectQuery()">Reject</button>
+</mat-dialog-actions>

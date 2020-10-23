@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark vh-8">
+    <img src="http://www.go-sharp.net/img/Logo-horizontal.png" alt="go-sharp logo" class="w-10 pointer" (click)="goToLogin()"/>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mx-4" id="navbarNav">
+        <ul class="navbar-nav align-center" *ngIf="logged">
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['pending-queries']" routerLinkActive="router-link-active" *ngIf="isAdmin">Pending Queries</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['user-list']" routerLinkActive="router-link-active" *ngIf="isAdmin">User List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['my-queries']" routerLinkActive="router-link-active" *ngIf="!isAdmin">My Queries</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['query-form']" routerLinkActive="router-link-active" *ngIf="!isAdmin">Query Form</a>
+            </li>
+            <li class="nav-item" (click)="logOut()">
+                <a class="nav-link align-center" href="#" tabindex="-1" aria-disabled="true">
+                    Logout
+                    <mat-icon class="mx-1">login</mat-icon>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

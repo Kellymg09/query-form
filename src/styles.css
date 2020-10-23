@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+.w-10 {
+  width: 10em;
+}
+
+.vh-8 {
+  min-height: 8vh;
+}
+
+.vh-92 {
+  min-height: 92vh;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  outline: inherit !important;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.my-8 {
+  margin-top: 8em;
+  margin-bottom: 8em;
+}
+
+.pointer {
+  cursor: pointer;
+}

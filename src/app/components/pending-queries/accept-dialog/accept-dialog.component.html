@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Accept Query</h2>
+<mat-dialog-content class="mat-typography">
+    <h3 *ngIf="!queryError">Are you sure to accept the query ?</h3>
+    <div class="alert alert-danger my-4" role="alert" *ngIf="typeError === 'SYNTAX_ERROR'">
+        There is a syntax error
+    </div>
+    <div class="alert alert-danger my-4" role="alert" *ngIf="typeError === 'CONN_ERROR'">
+        There is a connection error
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions class="justify-end">
+    <button mat-button mat-dialog-close cdkFocusInitial *ngIf="!queryError">Cancel</button>
+    <button mat-raised-button (click)="approveQuery()" *ngIf="!queryError">Accept</button>
+    <button mat-raised-button [mat-dialog-close]="true" *ngIf="queryError">Accept</button>
+</mat-dialog-actions>
