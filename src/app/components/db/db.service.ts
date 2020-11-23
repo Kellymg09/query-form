@@ -16,7 +16,7 @@ export class DBService {
      }
 
     public getDatabases() {
-        const url = 'https://api-backend.gshp-apps.com:40000/db';
+        const url = 'http://localhost:3000/db';
         return this.httpClient.get(url, { headers: this.headersObject });
     }
 

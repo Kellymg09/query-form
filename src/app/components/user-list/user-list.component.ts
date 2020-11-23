@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { CreateUserDialogComponent } from './create-user-dialog/create-user-dialog.component'
+import { EditUserDialogComponent } from './edit-user-dialog/edit-user-dialog.component'
 import { UserService } from './user.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { UserService } from './user.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'user', 'email', 'user_type'];
+  displayedColumns: string[] = ['id', 'user', 'email', 'user_type', 'edit_user'];
   dataSource: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -23,6 +24,15 @@ export class UserListComponent implements OnInit {
 
   openCreateDialog() {
     let dialogRef = this.dialog.open(CreateUserDialogComponent, {
+      width: '450px',
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      this.getAllUsers();
+    });
+  }
+
+  openEditDialog() {
+    let dialogRef = this.dialog.open(EditUserDialogComponent, {
       width: '450px',
     });
     dialogRef.afterClosed().subscribe(() => {

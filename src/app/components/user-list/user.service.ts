@@ -16,12 +16,17 @@ export class UserService {
      }
 
     public createUser(user: any) {
-        const url = 'https://api-backend.gshp-apps.com:40000/user';
+        const url = 'http://localhost:3000/user';
+        return this.httpClient.post(url, user, { headers: this.headersObject });
+    }
+
+    public editUser(user: any) {
+        const url = 'http://localhost:3000/user';
         return this.httpClient.post(url, user, { headers: this.headersObject });
     }
 
     public getAllUsers() {
-        const url = 'https://api-backend.gshp-apps.com:40000/user/get';
+        const url = 'http://localhost:3000/user/get';
         return this.httpClient.get(url, { headers: this.headersObject });
     }
 

@@ -4,10 +4,16 @@
         <button mat-raised-button (click)="openCreateDialog()">Create user</button>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-4">
             <!-- Position Column -->
+
+
             <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef> No. </th>
-                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-            </ng-container>
+                <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  <mat-form-field floatLabel="{{ element.id }}">
+                    <input matInput [formControl]="element.validator.controls['id']" [readonly]="!element.editing" placeholder="id" [(ngModel)]="element.currentData.id">
+                  </mat-form-field>
+                </mat-cell>
+              </ng-container>
 
             <!-- Query Column -->
             <ng-container matColumnDef="user">
@@ -25,6 +31,12 @@
             <ng-container matColumnDef="user_type">
                 <th mat-header-cell *matHeaderCellDef> User type </th>
                 <td mat-cell *matCellDef="let element"> {{element.roleId}} </td>
+            </ng-container>
+            
+            <!-- User type Column -->
+            <ng-container matColumnDef="edit_user">
+                <th mat-header-cell *matHeaderCellDef> Edit user </th>
+                <td mat-cell *matCellDef="let row"> <button mat-raised-button (click)="openEditDialog()">Edit user</button> </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

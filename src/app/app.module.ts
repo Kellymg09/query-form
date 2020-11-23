@@ -13,6 +13,7 @@ import { AcceptDialogComponent } from './components/pending-queries/accept-dialo
 import { RejectDialogComponent } from './components/pending-queries/reject-dialog/reject-dialog.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { CreateUserDialogComponent } from './components/user-list/create-user-dialog/create-user-dialog.component';
+import { EditUserDialogComponent } from './components/user-list/edit-user-dialog/edit-user-dialog.component';
 import { MyQueriesComponent } from './components/my-queries/my-queries.component';
 import { QueryFormComponent } from './components/query-form/query-form.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -20,6 +21,8 @@ import { AuthInterceptor } from './auth.interceptor';
 import { AuthGuardService } from './auth-guard.service';
 import { AdminGuardService } from './admin-guard.service';
 import { UserGuardService } from './user-guard.service';
+import { PersonListComponent } from './components/user-list/person-list-component/person-list.component';
+
 
 @NgModule({
   declarations: [
@@ -31,8 +34,10 @@ import { UserGuardService } from './user-guard.service';
     RejectDialogComponent,
     UserListComponent,
     CreateUserDialogComponent,
+    EditUserDialogComponent,
     MyQueriesComponent,
-    QueryFormComponent
+    QueryFormComponent,
+    PersonListComponent
   ],
   imports: [
     BrowserModule,
