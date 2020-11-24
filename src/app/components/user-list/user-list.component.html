@@ -24,7 +24,15 @@
             <!-- User type Column -->
             <ng-container matColumnDef="user_type">
                 <th mat-header-cell *matHeaderCellDef> User type </th>
-                <td mat-cell *matCellDef="let element"> {{element.roleId}} </td>
+                <td mat-cell *matCellDef="let element"> {{ getUserName(element.roleId) }} </td>
+            </ng-container>
+
+            <!-- Edit user Column -->
+            <ng-container matColumnDef="edit_user">
+                <th mat-header-cell *matHeaderCellDef> Edit user </th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-raised-button (click)="editUser(element)">Editar usuario</button>
+                </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

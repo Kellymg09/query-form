@@ -26,7 +26,7 @@ export class CreateUserDialogComponent implements OnInit {
   }
 
   createUser(form: any) {
-    form.value.roleId = form.value.roleId.id;
+    form.value.roleId = form.value.roleId;
     this.userService.createUser(form.value).subscribe((response) => {
       console.log("user", response);
     });

@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Create user</h2>
+<h2 mat-dialog-title>Edit user</h2>
 <mat-dialog-content class="mat-typography">
     <form [formGroup]="form">
         <div class="input-group">
@@ -7,17 +7,6 @@
                 <input matInput placeholder="User" type="text" formControlName="user">
                 <mat-error *ngIf="form.controls.user.errors">
                     <p *ngIf="form.controls.user.errors.required">
-                        Required field
-                    </p>
-                </mat-error>
-            </mat-form-field>
-        </div>
-        <div class="input-group">
-            <mat-form-field appearance="outline" class="w-100">
-                <mat-label>Email</mat-label>
-                <input matInput placeholder="Email" type="email" formControlName="email">
-                <mat-error *ngIf="form.controls.email.errors">
-                    <p *ngIf="form.controls.email.errors.required">
                         Required field
                     </p>
                 </mat-error>
@@ -51,5 +40,5 @@
 </mat-dialog-content>
 <mat-dialog-actions class="justify-end">
     <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
-    <button mat-raised-button [mat-dialog-close]="true" (click)="createUser(form)">Create</button>
+    <button mat-raised-button [mat-dialog-close]="true" (click)="createUser(form)">Edit</button>
 </mat-dialog-actions>

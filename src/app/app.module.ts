@@ -20,6 +20,7 @@ import { AuthInterceptor } from './auth.interceptor';
 import { AuthGuardService } from './auth-guard.service';
 import { AdminGuardService } from './admin-guard.service';
 import { UserGuardService } from './user-guard.service';
+import { EditUserDialogComponent } from './components/edit-user-dialog/edit-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UserGuardService } from './user-guard.service';
     UserListComponent,
     CreateUserDialogComponent,
     MyQueriesComponent,
-    QueryFormComponent
+    QueryFormComponent,
+    EditUserDialogComponent
   ],
   imports: [
     BrowserModule,
