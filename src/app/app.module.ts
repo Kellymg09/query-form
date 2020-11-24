@@ -21,7 +21,6 @@ import { AuthInterceptor } from './auth.interceptor';
 import { AuthGuardService } from './auth-guard.service';
 import { AdminGuardService } from './admin-guard.service';
 import { UserGuardService } from './user-guard.service';
-import { PersonListComponent } from './components/user-list/person-list-component/person-list.component';
 
 
 @NgModule({
@@ -36,8 +35,7 @@ import { PersonListComponent } from './components/user-list/person-list-componen
     CreateUserDialogComponent,
     EditUserDialogComponent,
     MyQueriesComponent,
-    QueryFormComponent,
-    PersonListComponent
+    QueryFormComponent
   ],
   imports: [
     BrowserModule,
